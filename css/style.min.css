@@ -5817,7 +5817,14 @@ body {
     margin-bottom: 10px;
   }
   .header__search {
-    flex: 0 0 140px;
+    display: block;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .header__currency-menu {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
   }
 }
 @media only screen and (max-width: 1600px) {
@@ -5827,6 +5834,16 @@ body {
   .chat__chat {
     flex: 1 1 100%;
     min-width: 100%;
+  }
+  .header__row {
+    flex-wrap: wrap;
+  }
+  .header__name-page {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+  .header__currency-menu {
+    min-width: auto;
   }
 }
 @media only screen and (max-width: 1560px) {
@@ -5873,19 +5890,6 @@ body {
     top: 0px;
     z-index: 100;
     transform: translate(0%, 0%);
-  }
-  .header__row {
-    flex-wrap: wrap;
-  }
-  .header__name-page {
-    flex: 1 1 100%;
-    margin-bottom: 10px;
-  }
-  .header__search {
-    flex: 0 0 140px;
-  }
-  .header .currency span:first-child {
-    display: none;
   }
   .transactions__table td:nth-child(1),
   .transactions__table th:nth-child(1) {
