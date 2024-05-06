@@ -5893,7 +5893,7 @@ body {
     flex: 0 0 300px;
   }
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1111px) {
   .profile__header,
   .notification-item__header {
     flex-wrap: wrap;
