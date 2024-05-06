@@ -4704,13 +4704,28 @@ label.copy .btn__url {
   justify-content: center;
   border-radius: 10px;
   padding: 12px 10px;
+  width: 35px;
+  height: 35px;
   background: rgba(255, 255, 255, 0.1);
+  transition: all 300ms ease;
 }
-.card__smal-btn svg {
+.card__smal-btn img {
+  position: absolute;
   width: 15px;
   height: 15px;
-  fill: white;
-  background: none;
+  transition: all 300ms ease;
+}
+.card__smal-btn .hover {
+  opacity: 0;
+}
+.card__smal-btn:hover {
+  background: #fff;
+}
+.card__smal-btn:hover .visible {
+  opacity: 0;
+}
+.card__smal-btn:hover .hover {
+  opacity: 1;
 }
 .card__total {
   font-weight: 700;
@@ -4745,6 +4760,11 @@ label.copy .btn__url {
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 10px 15px;
+  transition: all 300ms ease;
+}
+.card__btns button:hover {
+  background: #fff;
+  color: #000;
 }
 
 .aml__form {
