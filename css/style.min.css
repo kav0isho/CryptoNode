@@ -3544,6 +3544,29 @@ input {
   width: 100%;
   padding: 14px 14px 14px 14px;
 }
+input.invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+input.invalid {
+  border-color: #dc3545;
+  padding-right: 2.25rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5625rem center;
+  background-size: 1.125rem 1.125rem;
+}
+input.invalid ~ .text-field__message {
+  display: block;
+}
+
+.text-field__message {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc3545;
+}
 
 a {
   font-weight: 500;
@@ -4636,6 +4659,12 @@ label.copy .btn__url {
   margin-bottom: 20px;
 }
 
+.chart-parent {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
 .card {
   padding: 22.5px 20px 20px;
   border-radius: 30px;
@@ -4698,6 +4727,34 @@ label.copy .btn__url {
   display: flex;
   gap: 5px;
 }
+.card-settings__hover {
+  background: #fff;
+  padding: 10px;
+  border-radius: 7px;
+  position: absolute;
+  top: 50px;
+  display: none;
+}
+.card-settings__hover button, .card-settings__hover a {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  color: #222b45;
+  background: none;
+  text-decoration: none;
+}
+.card-settings__hover button:not(:last-child), .card-settings__hover a:not(:last-child) {
+  margin-bottom: 5px;
+}
+.card-settings__hover::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border: 10px solid transparent; /* Прозрачные границы */
+  border-bottom: 10px solid #fff; /* Добавляем треугольник */
+}
 .card__smal-btn {
   display: flex;
   align-items: center;
@@ -4717,6 +4774,16 @@ label.copy .btn__url {
 }
 .card__smal-btn .hover {
   opacity: 0;
+}
+.card__smal-btn.active {
+  cursor: pointer;
+  background: #fff;
+}
+.card__smal-btn.active .visible {
+  opacity: 0;
+}
+.card__smal-btn.active .hover {
+  opacity: 1;
 }
 .card__smal-btn:hover {
   background: #fff;
@@ -6036,6 +6103,9 @@ body {
     padding-top: 80px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .content__aside {
+    padding-bottom: 0px;
   }
   .content__aside-btn.active {
     display: none;
