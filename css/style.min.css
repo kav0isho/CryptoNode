@@ -3367,7 +3367,6 @@ h6 {
   border-radius: 0 30px 30px 0;
   flex: 0 0 300px;
   padding: 30px 20px 30px 0px;
-  max-height: 930px;
 }
 .aside.active {
   display: none;
@@ -3446,7 +3445,7 @@ h6 {
 }
 .aside__links a.active {
   opacity: 1;
-  background: rgba(45, 87, 230, 0.7);
+  background: rgb(45, 87, 230);
   border-radius: 15px;
 }
 .aside__links a.active::after {
@@ -5108,6 +5107,7 @@ label.copy .btn__url {
 
 body::-webkit-scrollbar {
   width: 5px; /* ширина scrollbar */
+  background: transparent;
 }
 
 body::-webkit-scrollbar-track {
@@ -5117,6 +5117,58 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #7d91ae; /* цвет плашки */
   border-radius: 4px; /* закругления плашки */
+}
+
+.slide-show {
+  position: relative;
+}
+.slide-show .arrow {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 17px;
+  order: 999;
+  flex: 0 0 20px;
+  top: 20px;
+  right: 10px;
+  z-index: 3;
+}
+.slide-show .arrow::before, .slide-show .arrow::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 1.5px;
+  background: #fff;
+  top: 8px;
+  transition: all 300ms ease;
+}
+.slide-show .arrow::after {
+  rotate: -45deg;
+  right: 7px;
+}
+.slide-show .arrow::before {
+  rotate: 45deg;
+}
+.slide-show .arrow.active::after {
+  rotate: 45deg;
+}
+.slide-show .arrow.active::before {
+  rotate: -45deg;
+}
+.slide-show a {
+  position: relative;
+  z-index: 2;
+}
+.slide-show .slide-toggle {
+  border-radius: 0px 0px 15px 15px;
+  padding: 15px;
+  background: rgba(45, 87, 230, 0.5);
+  max-height: 150px;
+  overflow-y: auto;
+  transform: translate(0px, -10px);
+  position: relative;
+  z-index: 1;
+  display: none;
 }
 
 .profile {
@@ -5787,6 +5839,7 @@ body {
   position: relative;
   display: flex;
   background: #f5f7ff;
+  align-items: flex-start;
 }
 
 .content {
